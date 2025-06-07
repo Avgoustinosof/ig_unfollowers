@@ -46,5 +46,6 @@ def index():
                 error = "Please upload a valid .session file"
     return render_template('index.html', unfollowers=unfollowers, error=error)
 
+# ✅ Updated for Render hosting
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=10000)
