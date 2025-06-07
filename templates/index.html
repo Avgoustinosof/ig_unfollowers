@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Unfollowers Checker</title>
+</head>
+<body>
+    <h1>Check Your Unfollowers</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <label>Upload Your .session File:</label><br>
+        <input type="file" name="session_file" required><br><br>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    {% if unfollowers %}
+        <h2>Unfollowers:</h2>
+        <ul>
+            {% for user in unfollowers %}
+                <li>{{ user }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
